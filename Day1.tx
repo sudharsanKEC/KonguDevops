@@ -1,0 +1,46 @@
+cd
+pwd
+mkdir jaga
+ls
+ls -l
+ls -a
+ls -al
+ls -s
+rmdir jaga
+ls
+mkdir jaga
+cd mkdir touch new.text
+cd jaga
+touch new.txt
+ls
+vim new.txt
+ls
+cat new.txt
+cd ..
+ls
+cp sample.txt
+sudo apt install openssh-server -y                                            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
