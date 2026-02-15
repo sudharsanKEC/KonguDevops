@@ -2,39 +2,44 @@
 
 ## 📘 Overview
 
-On the first day of the DevOps learning program, we were introduced to the challenges faced during the **development** and **operations** phases of building software applications. We discussed why these gaps exist and how DevOps helps bridge them by improving collaboration, automation, and deployment speed.
+On the first day of the DevOps learning program, we were introduced to the challenges faced during the development and operations phases of building software applications. We discussed the gap between development and operations teams and understood the need for DevOps practices to improve collaboration and efficiency.
 
-We were also briefed on the overall structure of the 6-day DevOps course.
+We were also given an overview of the 6-day DevOps course structure.
 
 ---
 
 ## 🧠 Topics Covered
 
-- Problems in traditional Development vs Operations workflow  
-- Introduction to DevOps concepts  
-- Overview of the 6-day course roadmap  
-- Basics of Linux (Ubuntu) commands  
+- Challenges in traditional Software Development and Operations
+- Introduction to DevOps
+- Course roadmap explanation
+- Basics of Linux (Ubuntu) commands
 
 ---
 
-## 💻 Practical Session
+## 💻 Practical Implementation
 
-After completing the theory session:
+After the theory session:
 
-- Basic Linux (Ubuntu) commands were demonstrated  
-- VMware Workstation Pro was installed  
-- Ubuntu OS was booted inside a virtual machine  
+- Installed VMware Workstation Pro
+- Created a new Virtual Machine
+- Booted Ubuntu OS inside VMware
+- Accessed and worked using the Ubuntu Terminal (CLI mode)
 
-This virtual environment allowed us to practice Linux commands safely without affecting the host operating system.
+We primarily used the **Command Line Interface (CLI)** instead of the graphical desktop environment.
 
 ---
 
 ## 🐧 Linux Commands Practiced
 
-- `pwd` – Print working directory  
-- `ls` – List files and folders  
-- `whoami` – Display current user  
-- `uname -a` – Show system information  
+The following basic Linux commands were executed in the Ubuntu terminal:
+
+- `pwd` – Displays current working directory  
+- `ls` – Lists files and directories  
+- `whoami` – Shows the current logged-in user  
+- `uname -a` – Displays system and kernel information  
+
+These commands helped in understanding basic Linux navigation and system details.
 
 ---
 
@@ -42,21 +47,20 @@ This virtual environment allowed us to practice Linux commands safely without af
 
 By the end of Day 1, I was able to:
 
-- Understand the gap between development and operations  
-- Learn basic DevOps concepts  
-- Install VMware Workstation Pro  
-- Successfully boot Ubuntu in a virtual machine  
-- Practice essential Linux commands  
+- Understand the importance of DevOps
+- Identify challenges between Development and Operations
+- Install VMware Workstation Pro
+- Boot Ubuntu in a virtual machine
+- Work comfortably using the Linux terminal
 
-This session provided a strong foundation for upcoming DevOps tools and workflows.
+This setup forms the foundation for upcoming DevOps tools and automation practices.
 
 ---
 
 ## 📸 Proof of Work
 
-Screenshots added in the `screenshots/` folder:
+Screenshots included in the `screenshots/` folder:
 
-- VMware installation  
-- Ubuntu desktop running  
-- Linux commands execution  
-
+- VMware Workstation Pro running Ubuntu VM
+- Ubuntu terminal open inside VMware
+- Execution of basic Linux commands
