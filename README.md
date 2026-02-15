@@ -64,3 +64,48 @@ Screenshots included in the `screenshots/` folder:
 - VMware Workstation Pro running Ubuntu VM
 - Ubuntu terminal open inside VMware
 - Execution of basic Linux commands
+
+# Day 2 – Docker Fundamentals and Containerized Web Application
+
+## 📘 Overview
+
+Day 2 focused on learning Docker and understanding the concept of containerization. The goal was to run a simple web application inside a Docker container using Ubuntu as the host environment. We also connected Ubuntu to VS Code using Remote SSH for easier development.
+
+This session was completely hands-on and helped us understand how applications can be packaged and deployed using Docker.
+
+---
+
+## 🧠 Topics Covered
+
+- Introduction to Docker and containerization
+- Installing Docker on Ubuntu
+- Connecting Ubuntu VM to VS Code using Remote SSH
+- Creating a simple HTML webpage
+- Writing a Dockerfile
+- Building Docker images
+- Running Docker containers
+- Accessing applications using VM IP and port mapping
+
+---
+
+## 💻 Environment Setup
+
+- Ubuntu running inside VMware
+- VS Code connected to Ubuntu via Remote SSH
+- Docker installed inside Ubuntu
+
+All development was done using the Ubuntu terminal and VS Code Remote SSH (no Ubuntu desktop GUI was used).
+
+---
+
+## 📁 Project Structure
+
+
+
+
+
+
+
+
+
+
