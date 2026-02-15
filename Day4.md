@@ -1,161 +1,75 @@
-# Day 4 – Ansible Configuration Management
+# Ansible Configuration Management
 
-This document explains the fundamentals of Ansible and demonstrates how it is used for configuration management and automation. The focus is on understanding Ansible architecture, inventory, ad-hoc commands, and playbooks for managing remote servers.
+## 1. Introduction
+Ansible is an open-source automation tool used for configuration management, application deployment, and task automation. It allows you to manage IT infrastructure quickly and efficiently.
 
----
+## 2. Architecture Overview
+Ansible operates in a distributed architecture. The system includes a control node and managed nodes. The control node is where Ansible is installed and commands are executed, while managed nodes are the servers that Ansible controls.
 
-## 📘 Introduction
+## 3. Environment Used
+The following environment has been used for this configuration management lesson:
+- OS: Ubuntu 20.04
+- Ansible Version: 2.10
 
-Ansible is an open-source automation tool used for:
-
-- Configuration Management  
-- Application Deployment  
-- Infrastructure Provisioning  
-- Orchestration  
-
-It works over SSH and does not require agents on managed nodes, making it lightweight and easy to adopt.
-
-Ansible follows a **push-based model**, where commands and configurations are pushed from the control node to managed nodes.
-
----
-
-## 🏗 Architecture Overview
-
-Ansible consists of:
-
-### 1. Control Node  
-The machine where Ansible is installed and executed.
-
-### 2. Managed Nodes  
-Remote servers controlled by Ansible (via SSH).
-
-### 3. Inventory  
-A file that lists target servers.
-
-### 4. Modules  
-Reusable units of work (package install, file copy, service restart, etc.).
-
-### 5. Playbooks  
-YAML files that define automation tasks.
-
----
-
-## ⚙️ Environment Used
-
-- Ubuntu (Ansible Control Node)
-- Remote Ubuntu servers (Managed Nodes)
-- SSH connectivity
-- GitHub (for project storage)
-
----
-
-## 📦 Installing Ansible
-
-Update system packages:
-
+## 4. Installing Ansible
+### Ubuntu
+To install Ansible on Ubuntu, run the following commands:
 ```bash
 sudo apt update
-Install Ansible:
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
+```
 
-sudo apt install ansible -y
-Verify installation:
+### CentOS
+For CentOS, use:
+```bash
+sudo yum install epel-release
+sudo yum install ansible
+```
 
-ansible --version
-📁 Inventory Configuration
-Create inventory file:
-
-nano inventory
-Example:
-
+## 5. Inventory Configuration
+Ansible manages machines via an inventory file, which can be a static or dynamic file.
+Example of a static inventory file (`/etc/ansible/hosts`):  
+```
 [web]
-192.168.64.130
+192.168.1.10
+192.168.1.11
 
 [db]
-192.168.64.131
-Test connectivity:
+192.168.1.20
+```
 
-ansible all -i inventory -m ping
-Successful ping confirms SSH connectivity.
+## 6. Ad-Hoc Commands
+Ad-Hoc commands allow you to manage your servers quickly. Here are some examples:
+```bash
+ansible all -m ping
+ansible web -m apt -a "name=apache2 state=latest"
+```
 
-⚡ Ad-Hoc Commands
-Check uptime:
-
-ansible all -i inventory -a "uptime"
-Install nginx:
-
-ansible web -i inventory -b -m apt -a "name=nginx state=present"
-Start nginx:
-
-ansible web -i inventory -b -m service -a "name=nginx state=started"
-These commands show how Ansible executes tasks remotely without playbooks.
-
-📜 Creating Ansible Playbook
-Create playbook:
-
-nano setup.yml
-Example:
-
----
+## 7. Creating Ansible Playbook
+A playbook is a YAML file containing a series of tasks to be executed. Here is an example playbook:
+```yaml
 - hosts: web
-  become: true
   tasks:
-    - name: Install nginx
+    - name: Install Apache
       apt:
-        name: nginx
-        state: present
+        name: apache2
+        state: latest
+```
 
-    - name: Start nginx
-      service:
-        name: nginx
-        state: started
-Run playbook:
+## 8. Accessing Application
+Once the playbook has been executed, you can access the application by navigating to `http://<server_ip>` in your web browser.
 
-ansible-playbook -i inventory setup.yml
-This automates installation and startup of nginx on all web servers.
+## 9. Key Concepts Learned
+- Understanding of playbooks, modules, and inventory files.
+- How to use Ad-Hoc commands effectively.
 
-🌐 Accessing Application
-After playbook execution, open browser:
+## 10. Typical Workflow
+1. Define inventory
+2. Write playbooks
+3. Execute playbooks with Ansible
+4. Verify the results
 
-http://<server-ip>
-Nginx default page confirms successful deployment.
-
-🧠 Key Concepts Learned
-1️⃣ Agentless Architecture
-No software needed on managed nodes.
-
-2️⃣ Idempotency
-Running playbooks multiple times does not break systems.
-
-3️⃣ Inventory Management
-Centralized host configuration.
-
-4️⃣ YAML Playbooks
-Human-readable automation.
-
-5️⃣ SSH-Based Communication
-Secure remote execution.
-
-🔄 Typical Workflow
-Ansible Control Node
-        ↓
-Inventory
-        ↓
-Playbook
-        ↓
-Managed Nodes
-✅ Outcome
-By completing Day 4:
-
-Installed and configured Ansible
-
-Connected multiple remote servers
-
-Executed ad-hoc commands
-
-Created Ansible playbooks
-
-Automated nginx deployment
-
-Accessed deployed service via browser
-
-This demonstrated how infrastructure tasks can be automated consistently across servers.
+## 11. Outcome
+By following these practices, you can efficiently manage your server configurations, reduce deployment errors, and improve operational efficiency.
