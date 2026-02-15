@@ -100,7 +100,9 @@ All development was done using the Ubuntu terminal and VS Code Remote SSH (no Ub
 
 ## 📁 Project Structure
 
-
+mysite/
+├── Dockerfile
+└── index.html
 
 
 
